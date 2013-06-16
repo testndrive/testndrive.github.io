@@ -310,8 +310,20 @@
                 <abbr title="E-mail">E-mail :</abbr> <a href="mailto:info@testndrive.ru">info@testndrive.ru</a>
               </address>
               <address>
+                <strong>AvtoProfi.ru</strong><br/>г.Москва, ул. Маршала Малиновского, дом 6, корп.1, подъезд №1А<br/>
+                <a href="http://www.avtoprofi.ru/">www.avtoprofi.ru</a><br/>
+                <abbr title="Phone-moscow">Телефон для Москвы:</abbr>  +7 (495) 921-36-28<br/>
+                <abbr title="Phone-regions">Телефон для регионов:</abbr>  +7 (800) 700-12-89<br/>
+                <abbr title="E-mail">E-mail:</abbr> mail@avtoprofi.ru
+              </address>
+              <address>
+                <strong>AvtoProfi.ru на Горбушке</strong><br/>г. Москва, Багратионовский пр. 7/1 ТК "Горбушкин Двор", павильон B1-082<br/>
+                <abbr title="Phone-moscow">Телефон:</abbr>  +7 (495) 789-12-89<br/>
+                <abbr title="Working-hours">Время работы:</abbr>  ежедневно с 10-00 до 21-00
+              </address>
+              <address>
                 <strong>tovar2.ru</strong><br/>г. Москва, метро Семёновская, пр-т Буденного, д.17 (вход с торца здания)<br/>
-                <abbr title="Phone-moscow">Телефон для Москвы:</abbr>  +7 (495) 649-86-35, +7 (495) 607-00-00
+                <abbr title="Phone-moscow">Телефон для Москвы:</abbr>  +7 (495) 649-86-35, +7 (495) 607-00-00 <br/>
                 <abbr title="Phone-regions">Телефон для регионов:</abbr>  +7 (800) 200-333-0
               </address>
               <address>
@@ -345,6 +357,19 @@
                       .add("mapTools")
                       .add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));
                   map.geoObjects
+                    .add(new ymaps.Placemark([37.494,55.790782], {
+                          balloonContentHeader: "<h3>AvtoProfi.ru</h3>",
+                          balloonContentBody: '<strong>Телефон:</strong><br/>+7 (495) 921-36-28, +7 (800) 700-12-89<br/><strong>Адрес:</strong> ул. Маршала Малиновского, дом 6, корп.1, подъезд №1А'
+                      }, {
+                          preset: "twirl#orangeDotIcon"
+                      }))
+                    .add(new ymaps.Placemark([37.501851,55.742245], {
+                          balloonContentHeader: "<h3>AvtoProfi.ru на Горбушке</h3>",
+                          balloonContentBody: '<strong>Телефон:</strong><br/>+7 (495) 789-12-89<br/><strong>Адрес:</strong> Багратионовский пр. 7/1 ТК "Горбушкин Двор", павильон B1-082'
+                      }, {
+                          preset: "twirl#darkblueDotIcon"
+                      }))
+
                       .add(new ymaps.Placemark([37.724580,55.774703], {
                           balloonContentHeader: '<h3>tovar2.ru</h3>',
                           balloonContentBody: '<strong>Телефон:</strong><br/>+7 (495) 607-00-00<br/>+7 (800) 200-333-0<br/><strong>Адрес:</strong> метро Семёновская,<br/>пр-т Буденного, д.17<br/>(вход с торца здания)'
