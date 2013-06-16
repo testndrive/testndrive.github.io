@@ -343,11 +343,14 @@
             </div><!-- /.span -->
             <div class="span8">
               <h3>На карте</h3>
-              <!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) -->
-              <div id="ymaps-map-id_134185410999881615034" class="yandex-map"></div>
+              <script src="http://api-maps.yandex.ru/2.0-stable/?coordorder=longlat&load=package.standard&lang=ru-RU" type="text/javascript"></script>
+              
               <script type="text/javascript">
-              function fid_134185410999881615034(ymaps) {
-                  var map = new ymaps.Map("ymaps-map-id_134185410999881615034", {
+                ymaps.ready(init);
+                var myMap;
+
+                function init(){  
+                  var map = new ymaps.Map("ymaps-map", {
                       center: [37.59046267175292, 55.75211348715418],
                       zoom: 10,
                       type: "yandex#map"
@@ -401,8 +404,8 @@
                       }));
               };
               </script>
-              <script type="text/javascript" src="http://api-maps.yandex.ru/2.0/?coordorder=longlat&load=package.full&wizard=constructor&lang=ru-RU&onload=fid_134185410999881615034"></script>
-              <!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
+              <div id="ymaps-map" class="yandex-map"></div>
+
               </section>
       <section id="contact">
         <div class="page-header">
